@@ -24,8 +24,8 @@ try:
 except:
     raise IOError("Inputted value might be incorrect IP or domain")
 
-start_port, end_port = input("Enter start port and end port: ").split(" ")
 print(socket.gethostbyname(address))
+start_port, end_port = input("Enter start port and end port: ").split(" ")
 for i in range(int(start_port), int(end_port) + 1):
     thread = threading.Thread(target=scan_port, args=(address, i))
     thread.start()
